@@ -28,7 +28,8 @@ function playRound(compChoice,userChoice) {
 function game(result) {
     let userCounter = 0;
     let compCounter = 0;
-    for (let i = 0; i < 5; i++) {
+    
+    while (userCounter < 5 || compCounter < 5 ) {
         result = playRound()
         console.log(result);
         result = result.substring(0,7)
@@ -38,7 +39,7 @@ function game(result) {
             userCounter++;
         }  
     }
-    
+
     return `Final score --> User: ${userCounter} Computer: ${compCounter}`
 }
 console.log(game());
